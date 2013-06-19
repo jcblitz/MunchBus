@@ -17,6 +17,11 @@ function BusCtrl($scope) {
         "passengers": []
       }
   ];
+
+  $scope.seatsAvailable = function(bus) {
+    return bus.seatCount - bus.passengers.length;
+  };
+
   $scope.totalBuses = function() {
     var count = 0;
     angular.forEach($scope.buses, function(bus) {
