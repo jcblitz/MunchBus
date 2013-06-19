@@ -1,0 +1,16 @@
+<h1>All Aboard!</h1>
+
+<div ng-controller="BusCtrl">
+  <h2>{{totalBuses()}} buses are scheduled for lunch.</h2>
+
+
+  <ul class="unstyled">
+    <li ng-repeat="bus in buses">
+      <p>{{bus.destination}} via {{bus.organizer}}</p>
+      <p>Seats Available: {{bus.openSeats()}}</p>
+    </li>
+  </ul>
+
+</div>
+
+
