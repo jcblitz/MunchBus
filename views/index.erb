@@ -1,7 +1,36 @@
 <h1>All Aboard!</h1>
 
-<div ng-controller="BusCtrl">
+<div ng-controller="BusCtrl">  
   <h2>{{totalBuses()}} buses are scheduled for lunch.</h2>
+
+  <form ng-submit="addBus()" class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="busDestination">Destination</label>
+      <div class="controls">
+        <input type="text" ng-model="busDestination" ng-required="true" size="30" id="busDestination" placeholder="Pick a place to eat." />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="busSeatCount">Available Seats</label>
+      <div class="controls">
+        <input type="number" ng-model="busSeatCount" ng-required="true" value="1" class="input-small" id="busSeatCount" size="1" />
+      </div>
+    </div>
+
+    
+    <div class="control-group">
+      <div class="controls">
+        <input class="btn btn-primary" type="submit" value="Add" />
+      </div>
+    </div>
+    
+    
+  </form>
+
+
+
+
   <div class="row">
     <div class="span4" ng-repeat="bus in buses">
       <h3>{{bus.destination}}</h3>

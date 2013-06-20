@@ -24,6 +24,10 @@ function BusCtrl($scope) {
     "onBus": false
   }
 
+  $scope.addBus = function() {
+    $scope.buses.unshift({destination:$scope.busDestination, organizer: $scope.user.name, seatCount: $scope.busSeatCount, passengers: [] });
+  };
+
   $scope.seatsAvailable = function(bus) {
     return bus.seatCount - bus.passengers.length;
   };
